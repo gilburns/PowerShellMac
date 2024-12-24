@@ -2,7 +2,7 @@
 
 jsonString="$1"
 
-if [[ -z "$1" ]]; then
+if [[ -z "$jsonString" ]]; then
     echo "Json argument missing"
     exit 1
 fi
