@@ -13,5 +13,10 @@ The same exact Json passed directly to dialog worked fine, outside of PowerShell
 In the end, I ended up putting a small `zsh` shell script in between [PowerShell](https://learn.microsoft.com/en-us/powershell/) and [SwiftDialog](https://github.com/swiftDialog/swiftDialog) to get this to work.  
 
 I have included the `zsh` script: [dialog_runner.sh](./dialog_runner.sh)  
-Along withe the PowerShell example: [Dialog-via-PowerShell.ps1](./Dialog-via-PowerShell.ps1)
+Along withe the PowerShell example: [Dialog-via-PowerShell.ps1](./Dialog-via-PowerShell.ps1)  
+    
+
+Call the zsh script like this with PowerShell to get the response back from dialog:  
+      
+`$Response = (/bin/zsh "/path/to/dialog_runner.sh" "$jsonParms")`
 
