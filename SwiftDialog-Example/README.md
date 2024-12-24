@@ -7,7 +7,7 @@
 
 Dialog would complain that the `JSON import failed`.  
 
-The same exact Json passed directly to dialog worked fine, outside of PowerShell. So, I'm unsure what Powershell was doing to to json.
+The same exact Json passed directly to dialog worked fine, outside of PowerShell. So, I'm unsure what Powershell was doing to the json when it attempted to launch the app.
 
 
 In the end, I ended up putting a small `zsh` shell script in between [PowerShell](https://learn.microsoft.com/en-us/powershell/) and [SwiftDialog](https://github.com/swiftDialog/swiftDialog) to get this to work.  
