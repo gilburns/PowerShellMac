@@ -5,7 +5,9 @@
 
 `& "/usr/local/bin/dialog" "arg1" "arg2"`  
 
-Dialog would complain that the `JSON import failed`. The same exact Json passed through the zsh script works fine. So, I'm unsure what Powershell was doing to to json.
+Dialog would complain that the `JSON import failed`.  
+
+The same exact Json passed directly to dialog worked fine, outside of PowerShell. So, I'm unsure what Powershell was doing to to json.
 
 
 In the end, I ended up putting a small `zsh` shell script in between [PowerShell](https://learn.microsoft.com/en-us/powershell/) and [SwiftDialog](https://github.com/swiftDialog/swiftDialog) to get this to work.  
