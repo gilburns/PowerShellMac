@@ -8,8 +8,10 @@ if [[ -z "$jsonString" ]]; then
 fi
 
 # remove the alwaysreturninput argument if you only want to see output when button1 is clicked.
-"/usr/local/bin/dialog" --alwaysreturninput --jsonstring "$jsonString" --json 2>/dev/null
+jsonValue=$("/usr/local/bin/dialog" --alwaysreturninput --jsonstring "$jsonString" --json 2>/dev/null)
 
-response="$?"
+exitCode="$?"
 
-echo "$response"
+printf '{ "exitCode": %i,
+  "jsonValue": %s
+}\n' "$exitCode" "$jsonValue"
