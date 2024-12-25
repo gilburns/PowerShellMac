@@ -55,6 +55,14 @@ $jsonParms = ($dialogAttributes | ConvertTo-Json -Depth 5 -Compress)
 
 # Launch SwiftDialog with the helper script
 $Response = (/bin/zsh "$DialogRunner" "$jsonParms")
-
 # Write the response to the terminal
-$Response
+# $Response
+
+# Get the exit code from response
+$ExitCode = ($Response -split "`n")[-1]
+Write-Host "The exit code was: " $ExitCode
+
+# Get the json element from response
+$jsonResponse = $Response | Select-Object -SkipLast 1
+Write-Host "The json response was:"
+$jsonResponse
